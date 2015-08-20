@@ -1,0 +1,11 @@
+
+.content{width: 360px;height: auto}
+
+#carousel_inner,
+#capture-result{
+    width: 330px;
+    height: 330px;
+    z-index: 1;
+}
+.carousel_slide{width: 300px; height: 300px}
+#module-rate{width: 330px}

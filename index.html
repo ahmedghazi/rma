@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>RateMyAss</title>
+    </head>
+    <body>
+        
+        <aside class="anime">
+            <ul id="menu">
+
+                <li><a class="contentLink active" href="#newest"><span class="glyphicon glyphicon-globe"></span> <span class="title">LAST ASSES</span></a></li>
+                <li><a class="contentLink" href="#top"><span class="glyphicon glyphicon-thumbs-up"></span> <span class="title">TOP ASSES</span></a></li>
+                <li><a class="contentLink" href="#worst"><span class="glyphicon glyphicon-thumbs-down"></span> <span class="title">NOT SO TOP ASSES</span></a></li>
+                <li><a class="contentLink" href="#my"><span class="glyphicon glyphicon-bookmark"></span> <span class="title">MY ASSES</span></a></li>
+                <li><a class="contentLink" href="#capture"><span class="glyphicon glyphicon-camera"></span> <span class="title">CAPTURE ASS</span></a></li>
+                <li><a class="contentLink" href="#mentions"><span class="glyphicon glyphicon-info-sign"></span> <span class="title">INFOS</span></a></li>
+            </ul>
+        </aside>
+
+
+        <div id="wrapper" class="anime">
+            <header>
+               
+                <a href="#" class="showMenu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </a>
+                <h1>RATE MY ASS</h1>
+                <a href="#" class="pull-right take_pic"><span class="glyphicon glyphicon-camera"></span></a>
+            </header>
+            
+            
+
+            <div data-role="page" class="pages hidden" id="newest">
+                <div class="content">
+                    <div id="carousel_inner"></div>
+                    <div id="module_rate">
+                        <div id="rate">
+                            <span class="rate_value">5</span>
+                        </div>
+                        <canvas id="pie" width="" height=""></canvas>
+                    </div>    
+                </div>
+                
+            </div><!-- /page last -->
+
+            <div data-role="page" class="pages hidden" id="top">
+                <div class="content">
+                    <div id="carousel_inner"></div>
+                    <div id="rate">
+                        <span class="rate_value">5</span>
+                    </div>
+                    <hr>
+                    <div id="module-rate"></div>
+
+                </div>
+                
+            </div><!-- /page top -->
+
+            <div data-role="page" class="pages hidden" id="worst">
+                <div class="content">
+                    <div id="carousel_inner"></div>
+                    <div id="rate">
+                        <span class="rate_value">5</span>
+                    </div>
+                    <hr>
+                    <div id="module-rate"></div>
+
+                </div>
+                
+            </div><!-- /page top -->
+            
+            <div data-role="page" class="pages hidden " id="my">
+                <div class="content">
+                    <div id="carousel_inner"></div>
+                    <div id="rate">
+                        <span class="rate_value">5</span>
+                    </div>
+                    <hr>
+                </div>
+            </div><!-- /page my -->
+
+            <div data-role="page" class="pages hidden" id="capture">
+                <div class="content">
+                    <div id="capture-result" class="capture-result">
+                        <!--canvas id="capture-cnvs" width="" height=""></canvas-->
+                        <img id="capture-result-img" src="" alt="" width="100%" height="">
+                        <div id="del" class="hidden">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </div>
+
+                    </div>
+               
+                    <a id="btn-send" href="#" >SEND</a>
+                </div>
+            </div><!-- /page capture -->
+
+            <div data-role="page" class="pages hidden " id="mentions">
+                <div class="content">
+                    <p><strong>LEGAL NOTICE</strong></p>
+                    <p>There is no rate equal to ten cause the ass finally is used to poo</p>
+                    <p>There is no rate equal to 0 cause an ass is still an ass</p>
+                    <p>Lorem you son of a bizzle sizzle fizzle da bomb, things adipiscing shut the shizzle up. Nullam owned velizzle, yippiyo volutpizzle, suscipit quizzle, gravida vizzle, dizzle. Pellentesque eget you son of a bizzle. Sizzle erizzle. Fo shizzle at dolizzle dapibizzle tempizzle you son of a bizzle. Maurizzle pellentesque nibh pimpin' turpizzle. Shizzlin dizzle izzle tortor. Pellentesque eleifend rhoncizzle mofo. In hac habitasse platea dictumst. Sure dapibizzle. Curabitur tellizzle nizzle, pretium things, mattizzle crunk, eleifend vitae, nunc. My shizz suscipizzle. Integizzle sempizzle velit sizzle purus.</p>
+                </div>
+            </div><!-- /page mentions -->
+
+            
+            <div id="report" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" id="myModalLabel">Do you want to report this Ass ?</h4>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-default">It's Ok</button>
+                        <button type="button" class="btn btn-danger">For Sure</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div><!-- /wrapper -->
+        <div id="loading"></div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <script type="text/javascript" src="js/utils/Crud.js"></script>
+        <script type="text/javascript" src="js/model/ModelAss.js"></script>
+        <script type="text/javascript" src="js/model/ModelAssCollection.js"></script>
+        <script type="text/javascript" src="js/ui/ModulePie.js"></script>
+        <script type="text/javascript" src="js/views/Naviguation.js"></script>
+        <script type="text/javascript" src="js/views/Carousel.js"></script>
+        <script type="text/javascript" src="js/views/Capture.js"></script>
+        <script type="text/javascript" src="js/controllers/MainController.js"></script>
+        
+        <script type="text/javascript" src="js/vendor/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
