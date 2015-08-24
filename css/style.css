@@ -19,9 +19,16 @@
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-*, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+*, *:before, *:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
 
-/*
+
 @font-face {
     font-family: 'cousineregular';
     src: url('../fonts/cousine-regular-webfont.eot');
@@ -33,7 +40,7 @@
     font-weight: normal;
     font-style: normal;
 }
-*/
+
 
 @font-face {
     font-family: 'Monospace821BT-Bold';
@@ -208,7 +215,7 @@ h1 {
     overflow:visible;
     padding:0;
     text-align:center;
-    padding-top: 11px;
+    padding-top: 12px;
 }
 
 .showMenu{
@@ -245,11 +252,10 @@ h1 {
 
 .take_pic{
     position: absolute;
-    top: 7px;
+    top: 8px;
     right: 8px;
     font-size: 23px;
     width: 30px; height: 30px;
-    color: #ff4d42 !important;
 }
 
 /* ============================================ ANIME PANEL ============================================ */
@@ -347,6 +353,11 @@ a.error{background: red}
     font-weight: bold;
     width: 50%;
 }
+.metas .num{
+    font-size: 1cm;
+    line-height: 1cm;
+}
+
 .average{
     border-top: 1px solid white;
 }
@@ -359,6 +370,11 @@ a.error{background: red}
     font-weight: bold;
     color:rgb(255, 255, 255);
     color: #ff4d42;
+}
+.report .num{
+    font-size: 1cm;
+    line-height: 1cm;
+    text-align: right;
 }
 
 /* ============================================ PAGES ============================================ */

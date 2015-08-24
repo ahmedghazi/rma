@@ -12,12 +12,14 @@ var ModulePie = function(callback){
         rate,
         color,
         offset = {},
-        timer;
+        timer,
+        arr = [];
 
     this.init = function(){
         //console.log("ModulePie ModulePie ModulePie ModulePie ModulePie ModulePie ModulePie");
         //arrColors = [19588,25774,3638463,7054288,10339295,16759230,16749727,16740733,16731226,12793924];
-        arrColors = [216450,91820,3900861,7185614,16749984,16740991,16731742,12663367];
+        //arrColors = [216450,91820,3900861,7185614,13811149,16749984,16740991,16731742,12663367];
+        arrColors = [216450, 91820, 3900861, 10404830, 13811149, 16749984, 16740991, 16731742, 12663367];
         offset.x = $("#pie").offset().left;
         offset.y = $("#pie").offset().top;
 //console.log(offset)
@@ -58,7 +60,7 @@ var ModulePie = function(callback){
         e.stopPropagation();
         touchX = e.targetTouches[0].pageX - offset.x;
         touchY = e.targetTouches[0].pageY - offset.y;
-        //_this.updateColor();
+        _this.updateColor();
     };
 
     this.handleTouchMove = function(e){
@@ -66,8 +68,7 @@ var ModulePie = function(callback){
         e.stopPropagation();
         touchX = e.targetTouches[0].pageX - offset.x;
         touchY = e.targetTouches[0].pageY - offset.y;
-//console.log(touchX, touchY)
-        //_this.updateColor();
+        _this.updateColor();
     };
 
     this.handleTouchEnd = function(e){
@@ -86,7 +87,7 @@ var ModulePie = function(callback){
 
         _this.updateColor();
 
-        //$("body").trigger("USER_HAS_RATED", [rate]);
+        $("body").trigger("USER_HAS_RATED", [rate]);
     };
 
     this.updateColor = function(){
@@ -98,7 +99,8 @@ var ModulePie = function(callback){
         var rgb = "rgb("+pixelData[0]+","+pixelData[1]+","+pixelData[2]+")";
         
         rate = arrColors.indexOf(color) + 1;    
-        console.log(rate)
+        //console.log(rate)
+        
         if(rate === 0)return; 
         //if(rate === 10)return; 
         //if(rate === 1)return; 

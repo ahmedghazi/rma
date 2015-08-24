@@ -7,8 +7,9 @@ var Carousel = function(){
         w,
         h,
         indice_x = 0,
-        arrColors = ["004c84","0064ae","3784bf","6ba3d0",'9dc3df',"ffb9be","ff949f","ff717d","ff4c5a","c33844"];
-
+        //arrColors = ["004c84","0064ae","3784bf","6ba3d0",'9dc3df',"ffb9be","ff949f","ff717d","ff4c5a","c33844"];
+        arrColors = ["0b4e80", "0f68aa", "3f86bb", "9fc3dd", "d2bdcd", "ff96a1", "ff7381", "ff5062", "bf3c4a"];
+        
     this.init = function(){
         _this.format();
         _this.bindEvents();
@@ -33,12 +34,20 @@ var Carousel = function(){
         var _h = '';
         for(var i in model){
             var vote_count = model[i].getRatings().length;
-
+//console.log(model[i].getAverage());
             _h += '<div class="carousel_slide slideOut" id="slide-'+i+'" data-rating="'+model[i].getRatings()+'" data-average="'+model[i].getAverage()+'">';
                 _h += '<img src="'+model[i].getImg()+'" alt="">';
                 _h += '<div class="metas">';
-                    _h += vote_count+' votes';
+                    _h += '<div class="num">'+vote_count+'</div>';
+                    _h += '<div class="num_label">votes</div>';
                 _h += '</div>';
+
+                /*
+                _h += '<div class="report">';
+                    _h += '<div class="num"><span class="glyphicon glyphicon-flash"></span></div>';
+                    _h += '<div class="num_label">REPORT</div>';
+                _h += '</div>';
+                */
 
                 _h += '<div class="report"><span class="glyphicon glyphicon-flash"></span> REPORT</div>';
     
@@ -51,9 +60,6 @@ var Carousel = function(){
 
         
         setTimeout(function(){
-            
-            
-            
             
             $("#newest").removeClass('hidden').addClass('activePage');
             $("#loading").hide();
@@ -141,10 +147,10 @@ var Carousel = function(){
         var data = $slide.data();
         
         $('#rate span').text(data.average);
-
+console.log(data.average)
         var color = arrColors[data.average-1];
         $("#carousel_inner, #rate").css({backgroundColor:"#"+color});
-        $(".metas").css({color:"#"+color})
+        //$(".metas").css({color:"#"+color})
         $(".average").css({"border-color":"#"+color})
         
     };

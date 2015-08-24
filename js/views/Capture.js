@@ -57,11 +57,15 @@ if(navigator.camera){
         $("#loading").show();
         $("#capture").removeClass('hidden').addClass('activePage');
         
+
+
+
+        /*
         _this.render();
         _this.format();
         _this.onSuccess("http://s9.postimg.org/lko32v13z/best_ass_5.jpg");
         return;
-        
+        */
 
         
 
